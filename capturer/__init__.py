@@ -151,7 +151,7 @@ class MultiProcessHelper(object):
         self.processes.append(child_process)
         child_process.daemon = True
         child_process.start()
-        started_event.wait()
+        started_event.wait(timeout=30)
 
     def stop_children(self):
         """
